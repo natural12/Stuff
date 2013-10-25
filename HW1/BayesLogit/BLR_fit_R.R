@@ -36,9 +36,7 @@ if (length(args)==0){
 # Simulation datasets numbered 1001-1200
 fileno <- sim_num
 
-#data<-read.table(sprintf("C:/HaoJi/UC DAVIS PHD in STAT/2013-2014/Fall13/STA250/Homework1/blr_data_%d.csv",fileno),
-#        header=TRUE, sep=",")
-data <- read.table(file=paste("/home/jihao/STA250/Stuff/HW1/BayesLogit/data/blr_data_",fileno,".csv",sep=""), header=TRUE, sep=",")
+data <- read.table(file=paste("/home/natural12/STA250/Stuff/HW1/BayesLogit/data/blr_data_",fileno,".csv",sep=""), header=TRUE, sep=",")
 
 ########################################################################################
 ########################################################################################
