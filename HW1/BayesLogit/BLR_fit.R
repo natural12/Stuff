@@ -33,7 +33,7 @@ if (length(args)==0){
 # Simulation datasets numbered 1001-1200
 fileno <- sim_num
 
-data <- read.table(file=paste("/data/blr_data_",fileno,".csv",sep=""), header=TRUE, sep=",")
+data <- read.table(file=paste("data/blr_data_",fileno,".csv",sep=""), header=TRUE, sep=",")
 
 ########################################################################################
 ########################################################################################
