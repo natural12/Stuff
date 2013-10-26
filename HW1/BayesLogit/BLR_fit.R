@@ -123,7 +123,7 @@ for(j in 1:p){
 }
 
 
-write.table(BetaPercentile, file=paste("/github.com/natural12/Stuff/tree/master/HW1/BayesLogit/results/blr_res_",fileno,".csv",sep=""),
+write.table(BetaPercentile, file=paste("results/","blr_res_",fileno,".csv",sep=""),
             row.names=FALSE,col.names=FALSE,sep=",")
 
 
