@@ -125,7 +125,7 @@ for(j in 1:p){
 outdir <- "results/"
 outfile_data <- paste0(outdir,"blr_res_",fileno,".csv")
 
-write.table(BetaPercentile, file=outfile_data,
+write.table(Beta.percentile, file=outfile_data,
             row.names=FALSE,col.names=FALSE,sep=",")
 
 
