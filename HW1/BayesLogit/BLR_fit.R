@@ -122,8 +122,10 @@ for(j in 1:p){
   for(i in 1:99){Beta.percentile[i,j] <- Rj[100*i]}
 }
 
+outdir <- "results/"
+outfile_data <- paste0(outdir,"blr_res_",fileno,".csv")
 
-write.table(BetaPercentile, file=paste("results/","blr_res_",fileno,".csv",sep=""),
+write.table(BetaPercentile, file=outfile_data,
             row.names=FALSE,col.names=FALSE,sep=",")
 
 
