@@ -1,6 +1,8 @@
 ##
 ## Post-process a large-scale validation run:
 ##
+library(mvtnorm)
+library(coda)
 
 # Start from clean workspace:
 rm(list=ls())
