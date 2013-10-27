@@ -1,6 +1,10 @@
 ########################################################################################
 ########################################################################################
+library(mvtnorm)
+library(coda)
 ## Handle batch job arguments:
+
+
 
 # 1-indexed version is used now.
 args <- commandArgs(TRUE)
