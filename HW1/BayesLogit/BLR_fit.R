@@ -100,7 +100,7 @@ logalpha=function(beta_star,beta_t){
       cat("Tuning Parameters after", i, "iterations during burnin period: ", w, "\n")
       count <- 0
     }
-    if(i%%print.every==0){cat(i," iterations of MH in Gibbs have been completed. \n")}
+    if(i%%print.every==0){cat(i," iterations of MH have been completed. \n")}
  
   } #for loop end
   
