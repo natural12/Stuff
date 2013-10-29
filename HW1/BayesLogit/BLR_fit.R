@@ -122,15 +122,14 @@ result <- bayes.logreg(m,y,x,beta.0,Sigma.0.inv,niter=10000,burnin=1000,print.ev
 
 Beta.percentile <- matrix(rep(0,99*p),nrow=99,ncol=2)
 for(j in 1:p){
-  Rj <- sort(result[,j])
-  for(i in 1:99){Beta.percentile[i,j] <- Rj[100*i]}
+  k <- sort(result[,j])
+  for(i in 1:99){Beta.percentile[i,j] <- k[100*i]}
 }
 
 outdir <- "results/"
 outfile_data <- paste0(outdir,"blr_res_",fileno,".csv")
 
-write.table(Beta.percentile, file=outfile_data,
-            row.names=FALSE,col.names=FALSE,sep=",")
+write.table(Beta.percentile, file=outfile_data,row.names=FALSE,col.names=FALSE,sep=",")
 
 
 
