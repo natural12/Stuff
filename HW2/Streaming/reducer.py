@@ -1,10 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Nov 08 15:04:27 2013
 
-@author: Janice
-"""
 import sys
 
 
