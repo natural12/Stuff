@@ -1,0 +1,17 @@
+## Q3 ##
+
+create table hjob(A INT,B FLOAT)
+row format delimited fields terminated by '\t';
+LOAD DATA LOCAL INPATH 'hdata/groups.txt' OVERWRITE INTO TABLE hjob;
+
+
+INSERT OVERWRITE DIRECTORY 'hdata/mean.txt' 
+select avg(hjob.B)
+from hjob
+group by hjob.A;
+
+
+INSERT OVERWRITE DIRECTORY 'hdata/variance.txt'
+select variance(hjob.B)
+from hjob
+group by hjob.A;
