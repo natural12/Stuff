@@ -1,4 +1,3 @@
-
 args <- commandArgs(TRUE)
 
 cat("Command-line arguments:\n")
@@ -30,10 +29,6 @@ library(bigmemory.sri)
 library(bigmemory)
 library(biganalytics)
 
-
-
-
-
 # Attach big.matrix :
 
 fulldata <- attach.big.matrix("/home/pdbaines/data/blb_lin_reg_data.desc", header=F)
@@ -41,22 +36,18 @@ fulldata <- attach.big.matrix("/home/pdbaines/data/blb_lin_reg_data.desc", heade
 
 # Remaining BLB specs:
 gamma=0.7
-
 n=nrow(fulldata)
-
 b=as.integer(n^gamma)
-
 s=5
-
+r=50
 
 ## get s_index and r_index by extracting job number
-s_index=ceiling(sim_num/50)
-r_index=sim_num%%50
+s_index=ceiling(sim_num/r)
+r_index=sim_num%%r
 
 if (r_index==0){
-  r_index=50
+  r_index=r
 }
-
 
 
 # Extract the subset:
@@ -65,12 +56,9 @@ index=sample(n,size=b,replace=FALSE)
 subset=fulldata[index,]
 
 
-
-
 # Bootstrap dataset:
 rm(list=".Random.seed", envir=globalenv()) 
 bootstrap=rmultinom(1,n,prob=rep(1/b,b))
-
 
 # Fit lm:
 column=ncol(subset)
@@ -83,8 +71,6 @@ fit=lm(y~-1+x,weights=bootstrap/n)
 # Output file:
 
 outfile = paste0("output/","coef_",sprintf("%02d",s_index),"_",sprintf("%02d",r_index),".txt")
-
-
 write.table(fit$coefficients, file=outfile,sep="")
 
 
